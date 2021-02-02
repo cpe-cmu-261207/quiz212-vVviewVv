@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CourseCard } from "./component/view";
 function App() {
   const persons = [
     {
@@ -10,6 +11,11 @@ function App() {
       name: "Alice",
       gender: "male",
       age: "20"
+    },
+    {
+      name: "lakkhanan issara 620610805",
+      gender: "female",
+      age: "19"
     }
   ];
   const [num, setnum] = useState(620610805);
@@ -45,20 +51,11 @@ function App() {
 
       {/* Convert me to a component! */}
       <h3 class="title is-3">Person List</h3>
-      <table class="table is-bordered mb-3">
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Age</th>
-          </tr>
-          <tr>
-            <td>Bob</td>
-            <td>male</td>
-            <td>50</td>
-          </tr>
-        </tbody>
-      </table>
+      {persons.map((item) => {
+        return (
+          <CourseCard name={item.name} gender={item.gender} age={item.age} />
+        );
+      })}
     </div>
   );
 }
