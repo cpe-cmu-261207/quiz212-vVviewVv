@@ -12,30 +12,35 @@ function App() {
       age: "20"
     }
   ];
-  var num = 620610805;
+  const [num, setnum] = useState(620610805);
 
-  function add1() {
-    num++;
-    console.log(num);
-  }
-  function delete1() {
-    num--;
-    console.log(num);
-  }
-  function reset() {
-    num = 620610805;
-    console.log(num);
-  }
-  const myID = 620610805;
   return (
     <div class="ml-2">
       {/* Code me please! */}
       <div class="mb-4">
         <h3 class="title is-3">ID Counter</h3>
-        <p>{myID}</p>
-        <button onclick="add1()">-</button>
-        <button onclick="reset()">reset</button>
-        <button onclick="delete1()">+</button>
+        <p>{num}</p>
+        <button
+          onClick={() => {
+            setnum(num - 1);
+          }}
+        >
+          -
+        </button>
+        <button
+          onClick={() => {
+            setnum(620610805);
+          }}
+        >
+          reset
+        </button>
+        <button
+          onClick={() => {
+            setnum(num + 1);
+          }}
+        >
+          +
+        </button>
       </div>
 
       {/* Convert me to a component! */}
